@@ -37,8 +37,8 @@ CREATE TABLE test.topic_event
         positive Float32,
         negative Float32,
         neutral Float32),
-    `topics.name` Array(String),
-    `topics.weight` Array(Float32),
+    `keywords.name` Array(String),
+    `keywords.weight` Array(Float32),
     `entities.category` Array(String),
     `entities.name` Array(String),
     `entities.weight` Array(Float32)

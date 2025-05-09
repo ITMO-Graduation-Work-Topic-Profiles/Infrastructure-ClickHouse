@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS test.topic_event
     user_id   String,
     ts        DateTime,
     sentiment Tuple(positive Float32, negative Float32, neutral Float32),
-    topics     Nested(
+    keywords     Nested(
         name   String,
         weight Float32
     ),
