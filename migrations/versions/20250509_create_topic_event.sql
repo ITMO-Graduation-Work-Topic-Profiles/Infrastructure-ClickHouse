@@ -3,7 +3,10 @@ CREATE TABLE IF NOT EXISTS test.topic_events
 (
     topic_event_uuid UUID,
     user_id String,
-    sentiment Tuple(name String, weight Float32),
+    sentiments Nested(
+        name String,
+        weight Float32
+    ),
     keywords Nested(
         name String,
         weight Float32

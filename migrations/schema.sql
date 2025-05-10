@@ -32,9 +32,8 @@ CREATE TABLE test.topic_events
 (
     `topic_event_uuid` UUID,
     `user_id` String,
-    `sentiment` Tuple(
-        name String,
-        weight Float32),
+    `sentiments.name` Array(String),
+    `sentiments.weight` Array(Float32),
     `keywords.name` Array(String),
     `keywords.weight` Array(Float32),
     `entities.category` Array(String),
