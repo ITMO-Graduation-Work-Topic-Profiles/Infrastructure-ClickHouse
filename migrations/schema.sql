@@ -7,14 +7,14 @@ CREATE DATABASE IF NOT EXISTS test;
 
 CREATE TABLE test.content_event
 (
-    `content_event_id` UUID,
+    `content_event_uuid` UUID,
     `user_id` String,
     `content` String,
     `ts` DateTime
 )
 ENGINE = MergeTree
 PARTITION BY toYYYYMM(ts)
-ORDER BY content_event_id
+ORDER BY content_event_uuid
 SETTINGS index_granularity = 8192;
 
 CREATE TABLE test.schema_migrations
@@ -30,7 +30,7 @@ SETTINGS index_granularity = 8192;
 
 CREATE TABLE test.topic_event
 (
-    `topic_event_id` UUID,
+    `topic_event_uuid` UUID,
     `user_id` String,
     `sentiment` Tuple(
         name String,
@@ -44,7 +44,7 @@ CREATE TABLE test.topic_event
 )
 ENGINE = MergeTree
 PARTITION BY toYYYYMM(ts)
-ORDER BY topic_event_id
+ORDER BY topic_event_uuid
 SETTINGS index_granularity = 8192;
 
 
