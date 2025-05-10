@@ -5,7 +5,7 @@
 
 CREATE DATABASE IF NOT EXISTS test;
 
-CREATE TABLE test.content_event
+CREATE TABLE test.content_events
 (
     `content_event_uuid` UUID,
     `user_id` String,
@@ -28,7 +28,7 @@ PRIMARY KEY version
 ORDER BY version
 SETTINGS index_granularity = 8192;
 
-CREATE TABLE test.topic_event
+CREATE TABLE test.topic_events
 (
     `topic_event_uuid` UUID,
     `user_id` String,

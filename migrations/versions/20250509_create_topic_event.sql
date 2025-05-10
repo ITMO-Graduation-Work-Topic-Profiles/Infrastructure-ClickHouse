@@ -1,5 +1,5 @@
 -- migrate:up
-CREATE TABLE IF NOT EXISTS test.topic_event
+CREATE TABLE IF NOT EXISTS test.topic_events
 (
     topic_event_uuid UUID,
     user_id String,
@@ -20,4 +20,4 @@ PARTITION BY toYYYYMM(ts)
 ORDER BY (topic_event_uuid);
 
 -- migrate:down
-DROP TABLE IF EXISTS test.topic_event;
+DROP TABLE IF EXISTS test.topic_events;
