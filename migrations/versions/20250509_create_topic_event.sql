@@ -2,6 +2,7 @@
 CREATE TABLE IF NOT EXISTS test.topic_events
 (
     topic_event_uuid UUID,
+    content_event_uuid UUID,
     user_id String,
     sentiments Nested(
         name String,

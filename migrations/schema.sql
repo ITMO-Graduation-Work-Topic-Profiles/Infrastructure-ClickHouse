@@ -31,6 +31,7 @@ SETTINGS index_granularity = 8192;
 CREATE TABLE test.topic_events
 (
     `topic_event_uuid` UUID,
+    `content_event_uuid` UUID,
     `user_id` String,
     `sentiments.name` Array(String),
     `sentiments.weight` Array(Float32),
