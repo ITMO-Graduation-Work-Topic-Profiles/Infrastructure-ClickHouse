@@ -28,9 +28,9 @@ PRIMARY KEY version
 ORDER BY version
 SETTINGS index_granularity = 8192;
 
-CREATE TABLE test.topic_events
+CREATE TABLE test.topic_attributes_events
 (
-    `topic_event_uuid` UUID,
+    `topic_attributes_event_uuid` UUID,
     `content_event_uuid` UUID,
     `user_id` String,
     `sentiments.name` Array(String),
@@ -44,7 +44,7 @@ CREATE TABLE test.topic_events
 )
 ENGINE = MergeTree
 PARTITION BY toYYYYMM(ts)
-ORDER BY topic_event_uuid
+ORDER BY topic_attributes_event_uuid
 SETTINGS index_granularity = 8192;
 
 

@@ -1,7 +1,7 @@
 -- migrate:up
-CREATE TABLE IF NOT EXISTS test.topic_events
+CREATE TABLE IF NOT EXISTS test.topic_attributes_events
 (
-    topic_event_uuid UUID,
+    topic_attributes_event_uuid UUID,
     content_event_uuid UUID,
     user_id String,
     sentiments Nested(
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS test.topic_events
 )
 ENGINE = MergeTree()
 PARTITION BY toYYYYMM(ts)
-ORDER BY (topic_event_uuid);
+ORDER BY (topic_attributes_event_uuid);
 
 -- migrate:down
 DROP TABLE IF EXISTS test.topic_events;
